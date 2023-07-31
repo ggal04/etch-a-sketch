@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+
+/*
+Palette:
+#FEF8EC
+#FDC4C6
+#A293DC
+#DA4471
+#392F5A
+#1D201F
+*/
+body {
+    background-color: #FEF8EC;
+    margin: 0px;
+    font-family: 'Handjet', cursive;
+    height:100vh;
+
+}
+.title {
+    font-family: 'Kablammo', cursive;
+    font-size: 50px;
+    color: #DA4471;
+    margin: 1rem;
+    font-weight: normal;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.gridContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+.row{
+    display: flex;
+}
+
+.square{
+    background-color: #F45FFF;
+    width: 20px;
+    height: 20px;
+    
+}
