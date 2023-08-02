@@ -1,5 +1,5 @@
 let squareSize = 40;
-let size =16;
+let size = 16;
 let color = "#000000";
 let hold = false;
 
@@ -46,6 +46,18 @@ function addListeners() {
     })
 }
 
+function getSize(size) {
+    pick = parseInt(prompt("Pick a size between 1 and 100:"));
+    if (pick >= 1 && pick <= 100) {
+        size = pick;
+        return size;
+    }
+    else {
+        alert("Invalid number! Please try again :)");
+        return 0;
+    }
+}
+
 generateGrid(size);
 addListeners();
 
@@ -53,16 +65,18 @@ addListeners();
 
 const changeSize = document.querySelector('.dimensionChange')
 changeSize.addEventListener('click', () => {
-    squareSize = parseInt(prompt("Pick a size between 1 and 100:"));
-    const grid = document.querySelector('.grid');
-    grid.remove();
-    generateGrid(squareSize);
-    addListeners();
-    squareSize = 640/squareSize;
-    const allTheSquares = document.querySelectorAll('.square');
-    allTheSquares.forEach((square) => {
-        square.style.cssText = `height: ${squareSize}px; width: ${squareSize}px`
-    })
+    size = getSize(size);
+    if (size !== 0) {
+        const grid = document.querySelector('.grid');
+        grid.remove();
+        generateGrid(size);
+        addListeners();
+        squareSize = 640 / size;
+        const allTheSquares = document.querySelectorAll('.square');
+        allTheSquares.forEach((square) => {
+            square.style.cssText = `height: ${squareSize}px; width: ${squareSize}px`
+        })
+    }
 })
 
 const colorPicker = document.querySelector('.paintcolor');
