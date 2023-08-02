@@ -1,6 +1,6 @@
 let squareSize = 40;
 let size =16;
-let color = "#FFFFFF";
+let color = "#000000";
 let hold = false;
 
 
@@ -63,5 +63,10 @@ changeSize.addEventListener('click', () => {
     allTheSquares.forEach((square) => {
         square.style.cssText = `height: ${squareSize}px; width: ${squareSize}px`
     })
+})
+
+const colorPicker = document.querySelector('.paintcolor');
+colorPicker.addEventListener('change', () => {
+    color = colorPicker.value;
 })
 
