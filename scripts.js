@@ -5,7 +5,8 @@ let hold = false;
 let rainbow = false;
 let shading = false;
 let erase = false
-let colorPencil = false;
+let colorPencil = true;
+let guideGrid = false
 
 
 function generateGrid(size) {
@@ -40,11 +41,27 @@ function addListeners() {
     allTheSquares.forEach((square) => {
         square.addEventListener('mousemove', () => {
             if (hold === true) {
-                square.style.cssText = `background: ${color}; height: ${squareSize}px; width: ${squareSize}px`;
+                if (colorPencil) {
+                    square.style.cssText = `background: ${color}; height: ${squareSize}px; width: ${squareSize}px`;
+                }
+                else if (rainbow) {
+                    square.style.cssText = `background: #${Math.floor(Math.random()*16777215).toString(16)}; height: ${squareSize}px; width: ${squareSize}px`;
+                }
+                else if (eraser) {
+                    square.style.cssText = `background: ${colorChange.value}; height: ${squareSize}px; width: ${squareSize}px`;
+                }
             }
         })
         square.addEventListener('click', () => {
-            square.style.cssText = `background: ${color}; height: ${squareSize}px; width: ${squareSize}px`;
+            if (colorPencil) {
+                square.style.cssText = `background: ${color}; height: ${squareSize}px; width: ${squareSize}px`;
+            }
+            else if (rainbow) {
+                square.style.cssText = `background: #${Math.floor(Math.random()*16777215).toString(16)}; height: ${squareSize}px; width: ${squareSize}px`;
+            }
+            else if (eraser) {
+                square.style.cssText = `background: ${colorChange.value}; height: ${squareSize}px; width: ${squareSize}px`;
+            }
 
         })
     })
@@ -117,7 +134,7 @@ eraser.addEventListener('click', () => {
     erase = true;
     colorPencil = false;
 })
- 
+
 // EXTRA FEATURES
 
 const changeSize = document.querySelector('.dimensionChange')
