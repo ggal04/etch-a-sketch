@@ -3,7 +3,7 @@ let size = 16;
 let color = "#000000";
 let hold = false;
 let rainbow = false;
-let shading = false;
+//let shading = false;
 let erase = false
 let colorPencil = true;
 let guideGrid = false
@@ -45,11 +45,16 @@ function addListeners() {
                     square.style.cssText = `background: ${color}; height: ${squareSize}px; width: ${squareSize}px`;
                 }
                 else if (rainbow) {
-                    square.style.cssText = `background: #${Math.floor(Math.random()*16777215).toString(16)}; height: ${squareSize}px; width: ${squareSize}px`;
+                    square.style.cssText = `background: #${Math.floor(Math.random() * 16777215).toString(16)}; height: ${squareSize}px; width: ${squareSize}px`;
                 }
-                else if (eraser) {
+                else if (erase) {
                     square.style.cssText = `background: ${colorChange.value}; height: ${squareSize}px; width: ${squareSize}px`;
                 }
+                /*
+                else if (shading) {
+                    console.log(square.style.background);
+                }
+                */
             }
         })
         square.addEventListener('click', () => {
@@ -57,12 +62,16 @@ function addListeners() {
                 square.style.cssText = `background: ${color}; height: ${squareSize}px; width: ${squareSize}px`;
             }
             else if (rainbow) {
-                square.style.cssText = `background: #${Math.floor(Math.random()*16777215).toString(16)}; height: ${squareSize}px; width: ${squareSize}px`;
+                square.style.cssText = `background: #${Math.floor(Math.random() * 16777215).toString(16)}; height: ${squareSize}px; width: ${squareSize}px`;
             }
-            else if (eraser) {
+            else if (erase) {
                 square.style.cssText = `background: ${colorChange.value}; height: ${squareSize}px; width: ${squareSize}px`;
             }
-
+            /*
+            else if (shading) {
+                console.log(square.style.background);
+            }
+            */
         })
     })
 }
@@ -90,9 +99,9 @@ colorPicker.addEventListener('change', () => {
     rainbowButton.classList.remove('toggle');
     colorPicker.classList.add('toggle');
     eraser.classList.remove('toggle');
-    shadingButton.classList.remove('toggle');
+    //    shadingButton.classList.remove('toggle');
     rainbow = false;
-    shading = false;
+    //    shading = false;
     erase = false;
     colorPencil = true;
 })
@@ -103,13 +112,14 @@ rainbowButton.addEventListener('click', () => {
     rainbowButton.classList.add('toggle');
     colorPicker.classList.remove('toggle');
     eraser.classList.remove('toggle');
-    shadingButton.classList.remove('toggle');
+    //    shadingButton.classList.remove('toggle');
     rainbow = true;
-    shading = false;
+    //    shading = false;
     erase = false;
     colorPencil = false;
 })
 
+/*
 const shadingButton = document.querySelector('.shading');
 shadingButton.addEventListener('click', () => {
     rainbow = false;
@@ -121,16 +131,16 @@ shadingButton.addEventListener('click', () => {
     eraser.classList.remove('toggle');
     shadingButton.classList.add('toggle');
 })
-
+*/
 const eraser = document.querySelector('.eraser')
 eraser.addEventListener('click', () => {
     color = "#ffffff";
     rainbowButton.classList.remove('toggle');
     colorPicker.classList.remove('toggle');
     eraser.classList.add('toggle');
-    shadingButton.classList.remove('toggle');
+    //    shadingButton.classList.remove('toggle');
     rainbow = false;
-    shading = false;
+    //    shading = false;
     erase = true;
     colorPencil = false;
 })
@@ -148,7 +158,7 @@ changeSize.addEventListener('click', () => {
         squareSize = 640 / size;
         const allTheSquares = document.querySelectorAll('.square');
         allTheSquares.forEach((square) => {
-            square.style.cssText = `height: ${squareSize}px; width: ${squareSize}px`
+            square.style.cssText = `background: ${colorChange.value}; height: ${squareSize}px; width: ${squareSize}px`
         })
     }
 })
