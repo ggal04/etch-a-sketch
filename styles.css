@@ -45,7 +45,6 @@ body {
     flex-direction: column;
     margin: 1rem;
     width: fit-content;
-    /* box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); TEST THIS BETTER*/
 }
 .row {
     display: flex;
@@ -79,6 +78,7 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     box-shadow: 0px 0px 10px 7px #871e1d;
+    cursor: pointer;
 }
 .paintcolor {
     width: 9rem;
@@ -86,7 +86,18 @@ body {
     margin: 1rem;
     box-shadow: 0px 0px 10px 7px #871e1d;
     border: 0.2rem #f4f4f9 solid;
+    cursor: pointer;
 }
+.colorChange {
+    width: 9
+    3rem;
+    height: 3rem;
+    margin: 1rem;
+    box-shadow: 0px 0px 10px 7px #871e1d;
+    border: 0.2rem #f4f4f9 solid;
+    cursor: pointer;
+}
+
 .grid {
     box-shadow: 0px 0px 10px 7px #871e1d;
 }
@@ -109,4 +120,11 @@ body {
 
 .github {
     background-color: #a22522;
+}
+.toggle {
+    box-shadow: 0px 0px 10px 7px #35e908;
+}
+
+.colorChangeDiv{
+    display: flex;
 }
