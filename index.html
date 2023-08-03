@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
-    <title>Etch-a-Sketch!</title>
-</head>
-<body class="bod">
-    <header class="navbar">
-        <h1 class="title">Etch-a-Sketch!</h1>
-    </header>
-    <div class="gridContainer">
-    </div>
-    <div class="controlpanel">
-        <input type="color" class="paintcolor"/>
-        <button class="dimensionChange">Change Size!</button>
-    </div>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <script defer src="scripts.js"></script>
+        <title>Etch-a-Sketch!</title>
+    </head>
+    <body class="bod">
+        <header class="navbar">
+            <h1 class="title">Etch-a-Sketch!</h1>
+        </header>
+        <div class="center">
+            <div class="board">
+                <div class="gridContainer"></div>
+                <div class="controlpanel">
+                    <input type="color" class="paintcolor" />
+                    <button class="dimensionChange button">Change Size!</button>
+                    <button class="eraser button">Eraser</button>
+                    <button class="clear button">Clear!</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <p class="footertext">
+                    This exercise was made by me as part of the TOP curriculum.
+                </p>
+            </div>
+            <div class="github">
+                <iframe
+                    src="https://ghbtns.com/github-btn.html?user=ggal04&type=follow&count=false&size=large"
+                    frameborder="0"
+                    scrolling="0"
+                    width="160"
+                    height="30"
+                    title="GitHub"
+                ></iframe>
+            </div>
+        </div>
+    </body>
 </html>

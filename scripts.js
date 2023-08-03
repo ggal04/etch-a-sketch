@@ -84,3 +84,20 @@ colorPicker.addEventListener('change', () => {
     color = colorPicker.value;
 })
 
+const eraser = document.querySelector('.eraser')
+eraser.addEventListener('click', () => {
+    color = "#ffffff";
+})
+
+const clear = document.querySelector('.clear')
+clear.addEventListener('click', () => {
+    const grid = document.querySelector('.grid');
+    grid.remove();
+    generateGrid(size);
+    addListeners();
+    squareSize = 640 / size;
+    const allTheSquares = document.querySelectorAll('.square');
+    allTheSquares.forEach((square) => {
+        square.style.cssText = `height: ${squareSize}px; width: ${squareSize}px`
+    })
+})

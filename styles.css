@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kablammo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handjet&display=swap");
 
 /*
 Palette:
@@ -11,17 +11,29 @@ Palette:
 #1D201F
 */
 body {
-    background-color: #FEF8EC;
+    background-color: #a22522;
     margin: 0px;
-    font-family: 'Handjet', cursive;
-    height:100vh;
-    width:100vh;
-
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+.controlpanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .title {
-    font-family: 'Kablammo', cursive;
+    font-family: "Kablammo", cursive;
     font-size: 50px;
-    color: #DA4471;
+    color: #f4f4f9;
     margin: 1rem;
     font-weight: normal;
     display: flex;
@@ -31,15 +43,70 @@ body {
 .gridContainer {
     display: flex;
     flex-direction: column;
-   /* box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); TEST THIS BETTER*/
-
+    margin: 1rem;
+    width: fit-content;
+    /* box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); TEST THIS BETTER*/
 }
-.row{
+.row {
     display: flex;
+    justify-content: center;
 }
 
-.square{
+.square {
     background-color: #ffffff;
     width: 40px;
     height: 40px;
+}
+.board {
+    display: flex;
+    justify-content: center;
+    border: 0.25rem #f4f4f9 solid;
+    border-radius: 3rem;
+    border-style: dashed;
+    background-color: #a22522;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.button {
+    margin: 1rem;
+    font-family: "Handjet", cursive;
+    font-size: 2.5rem;
+    background-color: #7a1c1a;
+    border-radius: 2rem;
+    border: 0.25rem #f4f4f9 solid;
+    color: #f4f4f9;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-shadow: 0px 0px 10px 7px #871e1d;
+}
+.paintcolor {
+    width: 9rem;
+    height: 7rem;
+    margin: 1rem;
+    box-shadow: 0px 0px 10px 7px #871e1d;
+    border: 0.2rem #f4f4f9 solid;
+}
+.grid {
+    box-shadow: 0px 0px 10px 7px #871e1d;
+}
+.footer {
+    background-color: #a22522;
+    font-size: 1rem;
+    font-family: "Helvetica", sans-serif;
+    color: #7a1c1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.footertext {
+    margin: 0px;
+    font-family: "Handjet", cursive;
+    font-size: 1.6rem;
+}
+
+.github {
+    background-color: #a22522;
 }
